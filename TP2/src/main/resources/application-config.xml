@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:util="http://www.springframework.org/schema/util"
+xmlns="http://www.springframework.org/schema/beans"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd">
+
+<bean id="ZooDao" class="zoo.ZooDao">
+</bean>
+<bean id="ZooService" class="zoo.ZooService">
+<property ref="ZooDao" name="zooDao"></property>
+<!-- créer la couche dao et service et 
+créer l'instanciation et le lier initialiser ZooDao
+
+prend ce fichier et chercher tous les bin et les associations nécéssaires-->
+</bean>
+</beans>
