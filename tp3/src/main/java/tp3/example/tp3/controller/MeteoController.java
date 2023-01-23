@@ -44,6 +44,9 @@ public class MeteoController {
 		model.addAttribute("foo",foo);
 		System.out.println(foo.getType());
 		System.out.println(foo.getFeatures()[0].getProperties().getLabel());
+		for(int i=0;i<foo.getFeatures().length;i++){
+		 	System.out.println(foo.getFeatures()[i].getProperties().getLabel());
+		 }
 		//String result=restTemplate.getForObject(url,String.class);
 		
 		//curl 'https://api-adresse.data.gouv.fr/search/?q=10&type=housenumber&autocomplete=1'

@@ -11,7 +11,10 @@
 	<h1>Result</h1>
 	 <p th:text="'content: ' + ${address}" />
 	 <a th:href="${url}">Les résultats</a>
-	 <div th:text="${"foo.getFeatures()[0].getProperties().getLabel()"}></div>
+	 <ul th:each="feature : ${foo.getFeatures()}">
+	 	<li th:text="${feature.getProperties().getLabel()}"></li>
+	 
+	 </ul>
    
     
 </body>
