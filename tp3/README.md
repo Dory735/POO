@@ -1,3 +1,4 @@
+# Reponses du TP3 (lien du github à la fin du README)
 ## Spring Web
 Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
 -> Module de développement et d'api web, il utilise le modèle MVC (Modèle Vue Contrôleur)
@@ -58,3 +59,35 @@ Expliquez la méthode utilisé ajouter Bootstrap.
 -Ajout de th:fragment="navbar" dans <nav> avec navbar le nom du fragment
 -ajout dans les pages addresses et greeting d'un div qui va être remplacé par le 
 fragment à l'aide de th:replace="fragment/navbar :: navbar"
+
+# Reponses du TP4
+## Faut-il une clé API pour appeler MeteoConcept ?
+Il y a besoin d'une clé API limitant ainsi l'accès à l'API MeteoConcept.
+
+## Quelle URL appeler ?
+On appelle l'url suivant:
+https://api.meteo-concept.com/api/forecast/daily?token=notretoken&nosparamètres
+
+## Quelle méthode HTTP utiliser ?
+On va utiliser la méthode GET
+
+## Comment passer les paramètres d'appels ?
+Pour spécifier la longitude et la latitude de la ville on va passer le paramètre latlng dans notre url comme ceci:
+https://api.meteo-concept.com/api/forecast/daily?token=notretoken&latlng=140,10
+
+## Où est l'information dont j'ai besoin dans la réponse :
+La réponse est composée d'informations de la ville dans city puis de la météo pour les 13 prochains jours chacune dans un item.
+
+
+
+
+### Pour afficher la température du lieu visé par les coordonnées GPS
+Les informations intéréssantes pour ceci peuvent être la température minimum et maximum (tmin et tmax).
+
+### Pour afficher la prévision de météo du lieu visé par les coordonnées GPS
+L'attribut weather est intéréssant, nous pouvons récupérer le code temps avec cet attribut et le faire correspondre avec sa description.
+Par exemple 0= Soleil.
+
+
+## Lien vers projet GitHub
+https://github.com/Dory735/POO.git

@@ -21,8 +21,9 @@ public class Tp3Application {
 	public RestTemplate restTemplate() {
 	    SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
 
-	    Proxy proxy = new Proxy(Type.HTTP, new InetSocketAddress("proxy.univ-lemans.fr", 3128));
-	    requestFactory.setProxy(proxy);
+	    //Proxy proxy = new Proxy(Type.HTTP, new InetSocketAddress("proxy.univ-lemans.fr", 3128));
+	   
+	    //requestFactory.setProxy(proxy);
 
 	    return new RestTemplate(requestFactory);
 	}
