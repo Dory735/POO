@@ -137,10 +137,10 @@ public class MeteoController {
 		String line[];
 		
 		HashMap<Integer,String> temps=new HashMap<Integer,String>();
-		System.out.println(meteosp1[0]);
+		
 		for(int i=0;i<meteosp1.length;i++) {
 			line=meteosp1[i].split("	");
-			System.out.println(line[0]);
+			
 			temps.put(Integer.parseInt(line[0]),line[1]);
 		}
 		
@@ -151,10 +151,9 @@ public class MeteoController {
 		ArrayList<Meteo> meteos=new ArrayList<Meteo>();
 		model.addAttribute("foo",foo);
 		model.addAttribute("stat",0);
-		System.out.println(foo.getType());
-		System.out.println(foo.getFeatures()[0].getProperties().getLabel());
+		
 		for(int i=0;i<foo.getFeatures().length;i++){
-		 	System.out.println(foo.getFeatures()[i].getProperties().getLabel());
+		 	
 		 	urlmeteo="https://api.meteo-concept.com/api/forecast/daily?token=4ea2db3512e8b93c884651b5e7fda1b6ff603bbb323418e3652a68bfc25b06d8&latlng="+foo.getFeatures()[i].getGeometry().getCoordinates()[1]+","+foo.getFeatures()[i].getGeometry().getCoordinates()[0];
 		 	meteos.add(template.getForObject(urlmeteo, Meteo.class));
 		 }
